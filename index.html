@@ -14,6 +14,20 @@
     <script src="js/hackfest.js"></script>
 </head>
 <body>
+<script id="homepagePanelTemplate" type="x-tmpl-mustache">
+    <div class="col-lg-4 col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">{{title}}</div>
+            <div class="panel-body"></div>
+            <div class="panel-footer">
+                <a class="btn btn-default" href="#page-{{title}}">View {{title}}</a>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="pageViewTemplate" type="x-tmpl-mustache">
+    <div id="{{name}}" class="view">{{{viewHtml}}}</div>
+</script>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,6 +81,25 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div id="content" class="container-fluid"></div>
+<div id="content" class="container-fluid">
+    <div id="homepageView" class="view">
+        <div class="page-header">
+            <img class="img-responsive" src="img/HackFest.jpg">
+        </div>
+        <div id="homepagePanelContainer" class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Welcome to the HackFest! Hacking for a Smarter Region</div>
+                    <div class="panel-body">
+                        <p>Working in teams or individually, HackFest 2016 is for people with a mixture of skills including community members, entrepreneurs, developers, designers, digital media creators, artists, story tellers, researchers and open data enthusiasts, to hack - “take something and make it better” and create an outcome over an entire weekend.</p>
+                        <p>...</p>
+                        <p>You can <a href="http://sunshinecoast.i-events.info/link/id/zzzz561491808766e012/regform?evuid=zzzz57e8bb612e13f840">register now</a> for HackFest 2016.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pageView" class="view"></div>
+</div>
 </body>
 </html>
