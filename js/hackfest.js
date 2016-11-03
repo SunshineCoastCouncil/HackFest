@@ -8,8 +8,14 @@ if (!String.prototype.startsWith) {
 
 (function(hackfest, $, undefined) {
 
+    function pageUrl(pageName) {
+        return encodeURI("page/" + pageName + ".html");
+    }
+
     function renderView() {
         $("div.view").hide();
+        $("#mainNav").find("li.active").removeClass("active");
+
         var view = window.location.hash.substring(1);
         if (view.startsWith("page-")) {
             var $pageView = $("#pageView");
@@ -18,7 +24,8 @@ if (!String.prototype.startsWith) {
             $pageView.show();
             $pageView.load(pageUrl(pageName) + " #pageContent");
         } else {
-            $("#homepageView").show();
+            $("#homeView").show();
+            $("#mainNav ul.nav li").first().addClass("active");
         }
     }
 
@@ -29,6 +36,7 @@ if (!String.prototype.startsWith) {
     }
 
     $(document).ready(function() {
+        renderView();
         $(".faq .panel").click(faqClickHandler);
     });
 

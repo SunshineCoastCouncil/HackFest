@@ -18,11 +18,11 @@ body, html {
 }
 
 body {
-    font-size: 18px;
+    font-size: 16px;
     background: transparent;
 }
 
-.container-fluid {
+#homeView {
     padding-left: 0;
     padding-right: 0;
 }
@@ -106,6 +106,10 @@ table.schedule tr td:nth-child(3) {
 
 .jumbotron.footer p {
     font-size: 12px;
+}
+
+div.faq div.panel {
+    cursor: pointer;
 }
 
 div.faq div.panel-body {
