@@ -1,9 +1,117 @@
-body {
-    font-size: 18px;
+.hackfest-color {
+    color: #4d2178;
 }
 
-div.page-header {
-    margin-top: -20px;
-    margin-left: -15px;
-    margin-right: -15px;
+.hackfest-alt-color {
+    color: black;
+}
+
+.hackfest-background-color {
+    background-color: #4d2178;
+}
+
+html * {
+    font-family: 'Montserrat', sans-serif;
+}
+body, html {
+    height: 100%;
+}
+
+body {
+    font-size: 18px;
+    background: transparent;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.view {
+    padding-top: 50px;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+}
+
+.feature {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
+}
+
+.feature .jumbotron {
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.feature .jumbotron>div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.feature .jumbotron h1 {
+    font-weight: 600;
+}
+
+.feature .jumbotron h3 {
+    font-weight: 600;
+}
+
+.feature>* {
+    background: transparent;
+}
+
+div.header {
+    padding-top: 100px;
+    text-decoration-style: double;
+    text-decoration-color: black;
+}
+
+table.table.schedule,
+table.table.schedule>tbody>tr>th {
+    text-align: center;
+}
+
+table.table.schedule th {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 300;
+    padding-top: 25px;
+}
+
+table.schedule>tbody>tr>td {
+    border-top: none;
+}
+
+table.schedule tr td:first-child {
+    text-align: right;
+}
+
+table.schedule tr td:nth-child(2),
+table.schedule tr td:nth-child(3) {
+    text-align: left;
+}
+
+.jumbotron.footer {
+    color: rgb(230, 230, 230);
+    background-color: rgb(51, 51, 51);
+}
+
+.jumbotron.footer p {
+    font-size: 12px;
+}
+
+div.faq div.panel-body {
+    display: none;
+}
+
+div.faq div.panel.selected div.panel-body {
+    display: block;
 }

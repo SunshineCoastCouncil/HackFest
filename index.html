@@ -1,105 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>HackFest Jump Start Pack</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/hackfest.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/mustache.js"></script>
-    <script src="js/hackfest.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HackFest - Sunshine Coast Council</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/hackfest.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/mustache.js"></script>
+  <script src="js/hackfest.js"></script>
 </head>
 <body>
-<script id="homepagePanelTemplate" type="x-tmpl-mustache">
-    <div class="col-lg-4 col-md-6">
-        <div class="panel panel-info">
-            <div class="panel-heading">{{title}}</div>
-            <div class="panel-body"></div>
-            <div class="panel-footer">
-                <a class="btn btn-default" href="#page-{{title}}">View {{title}}</a>
-            </div>
-        </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
     </div>
-</script>
-<script id="pageViewTemplate" type="x-tmpl-mustache">
-    <div id="{{name}}" class="view">{{{viewHtml}}}</div>
-</script>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
-<div id="content" class="container-fluid">
-    <div id="homepageView" class="view">
-        <div class="page-header">
-            <img class="img-responsive" src="img/HackFest.jpg">
+<div id="homePage" class="view container-fluid text-center">
+  <div class="feature" style="background-image: url('./img/beach-1.jpg')">
+    <div class="jumbotron"><h1>Welcome to HackFest 2016</h1></div>
+  </div>
+  <div class="jumbotron">
+    <p>Working in teams or individually, HackFest is for people with a mixture of skills including community members, entrepreneurs, developers, designers, digital media creators, artists, story tellers, researchers and open data enthusiasts, to hack - “take something and make it better” and create an outcome over an entire weekend.</p>
+    <p>
+      LOCATION:<br>
+      Spark Bureau, 17 Ocean St, Maroochydore QLD
+    </p>
+    <p>
+      KICKS OFF:<br>
+      5.00PM - 7.00PM on Friday, 18th Nov, 2016
+    </p>
+    <p><a href="" class="btn btn-default">Register Now</a></p>
+  </div>
+  <div class="feature" style="background-image: url('./img/pitch.jpg')"></div>
+  <div class="jumbotron">
+    <h2>SCHEDULE</h2>
+    <table class="table schedule">
+    <tbody>
+      <tr><th colspan="3">OCTOBER 2016</th></tr>
+      <tr>
+        <td></td>
+        <td>Registrations Open</td>
+        <td></td>
+      </tr>
+      <tr><th colspan="3">FRIDAY, 18TH NOV</th></tr>
+      <tr>
+        <td>5.00PM</td>
+        <td>HackFest Opening</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>Ideas Pitch</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>Open Data & Data Format Workshop</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>? - ?</td>
+        <td>Team Formation</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr>
+        <td>? - ?</td>
+        <td>Dinner + Mingle</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>Hacking Begins</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>11.00PM</td>
+        <td>Hacking Stops for Day 1</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr><th colspan="3">SATURDAY, 19TH NOV</th></tr>
+      <tr>
+        <td>8.00AM</td>
+        <td>Hacking Continues</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>Code Examples &amp; Prototypes Workshop</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>Open Q&amp;A Information Session</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>12.00PM</td>
+        <td>Competitor Registrations Close</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>5.00PM</td>
+        <td>Team Registration and Category Nominations Close</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>11.00PM</td>
+        <td>Hacking Stops for Day 2</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Registrations Close</td>
+        <td></td>
+      </tr>
+      <tr><th colspan="3">SUNDAY, 20TH NOV</th></tr>
+      <tr>
+        <td>8.00AM</td>
+        <td>Hacking Continues</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr>
+        <td>1.00PM</td>
+        <td>Last Minute Workshop<br>(for general help with finalising and submitting entry)</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>4.00PM</td>
+        <td>Entry video should be finalised</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>5.00PM</td>
+        <td>Competition Closes<br>(all entries must be submitted)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>6.00PM</td>
+        <td>HackFest Close</td>
+        <td>Spark Bureau</td>
+      </tr>
+      <tr><th colspan="3">THURSDAY, 1ST DEC</th></tr>
+      <tr>
+        <td>6.00PM - 9.00PM</td>
+        <td>Awards Night</td>
+        <td>Spark Bureau</td>
+      </tr>
+      </tbody>
+    </table>
+    <p>THIS IS A TENTATIVE SCHEDULE AND MAY BE SUBJECT TO CHANGE</p>
+  </div>
+  <div class="feature" style="background-image: url('./img/hackerspace-2.jpg')"></div>
+  <div class="jumbotron faq">
+    <h2>FAQ</h2>
+    <div class="container-fluid"><div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Will there be food?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">Does it cost anything to participate?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
         </div>
-        <div id="homepagePanelContainer" class="row">
-            <div class="col-md-12">
-                <div class="panel panel-info">
-                    <div class="panel-heading">Welcome to the HackFest! Hacking for a Smarter Region</div>
-                    <div class="panel-body">
-                        <p>Working in teams or individually, HackFest 2016 is for people with a mixture of skills including community members, entrepreneurs, developers, designers, digital media creators, artists, story tellers, researchers and open data enthusiasts, to hack - “take something and make it better” and create an outcome over an entire weekend.</p>
-                        <p>...</p>
-                        <p>You can <a href="http://sunshinecoast.i-events.info/link/id/zzzz561491808766e012/regform?evuid=zzzz57e8bb612e13f840">register now</a> for HackFest 2016.</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">Who can enter?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
         </div>
-    </div>
-    <div id="pageView" class="view"></div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">What if I'm not very technical or experienced?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">Do I need to stay the entire time?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">Placeholder question?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+        <div class="panel-heading">Placeholder question?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Placeholder question?</div>
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+  <div class="feature" style="background-image: url('./img/spark.jpg')"></div>
+  <div class="jumbotron">
+    <h2>SPONSORS &amp; PARTNERS</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="feature" style="background-image: url('./img/hackerspace-1.jpg')"></div>
+  <div class="jumbotron">
+    <h2>GET IN TOUCH</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="jumbotron footer">
+    <p>Little placeholder for an about this site footer</p>
+  </div>
 </div>
 </body>
 </html>
