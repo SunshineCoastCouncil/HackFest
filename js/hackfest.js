@@ -40,4 +40,10 @@ if (!String.prototype.startsWith) {
         $(".faq .panel").click(faqClickHandler);
     });
 
+    $(document).on('click','.navbar-collapse.in',function(e) {
+        if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+            $(this).collapse('hide');
+        }
+    });
+
 })(window.disaster = window.disaster || {}, jQuery);
