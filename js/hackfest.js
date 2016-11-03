@@ -14,7 +14,13 @@ if (!String.prototype.startsWith) {
 
     function renderView() {
         $("div.view").hide();
-        $("#mainNav").find("li.active").removeClass("active");
+        $("#mainNav ul.nav li.active").removeClass("active");
+        $("#mainNav ul.nav li").each(function() {
+            var $this = $(this);
+            if ($this.find("a").attr("href") == (window.location.hash || "#")) {
+                $this.addClass("active");
+            }
+        });
 
         var view = window.location.hash.substring(1);
         if (view.startsWith("page-")) {
@@ -25,7 +31,7 @@ if (!String.prototype.startsWith) {
             $pageView.load(pageUrl(pageName) + " #pageContent");
         } else {
             $("#homeView").show();
-            $("#mainNav ul.nav li").first().addClass("active");
+            $(window.location.hash || "#homeView").get(0).scrollIntoView();
         }
     }
 
@@ -40,6 +46,7 @@ if (!String.prototype.startsWith) {
         $(".faq .panel").click(faqClickHandler);
     });
 
+    // hide expanded menu after click on small screens
     $(document).on('click','.navbar-collapse.in',function(e) {
         if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
             $(this).collapse('hide');
