@@ -74,6 +74,11 @@ div.header {
     text-decoration-color: black;
 }
 
+table.table.schedule {
+    display: inline-table;
+    max-width: 800px;
+}
+
 table.table.schedule,
 table.table.schedule>tbody>tr>th {
     text-align: center;
