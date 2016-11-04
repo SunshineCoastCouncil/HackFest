@@ -12,6 +12,11 @@ if (!String.prototype.startsWith) {
         return encodeURI("page/" + pageName + ".html");
     }
 
+    function adjustViewTopPadding() {
+        var topNavHeight = $("nav.navbar-fixed-top").height();
+        $("div.view").css("padding-top", topNavHeight + "px");
+    }
+
     function renderView() {
         $("div.view").hide();
         $("#mainNav ul.nav li.active").removeClass("active");
@@ -36,6 +41,7 @@ if (!String.prototype.startsWith) {
     }
 
     window.onhashchange = renderView;
+    $(window).resize(adjustViewTopPadding);
 
     function faqClickHandler() {
         $(this).toggleClass("selected");
@@ -43,6 +49,7 @@ if (!String.prototype.startsWith) {
 
     $(document).ready(function() {
         renderView();
+        adjustViewTopPadding();
         $(".faq .panel").click(faqClickHandler);
     });
 
