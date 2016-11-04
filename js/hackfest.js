@@ -50,6 +50,7 @@ if (!String.prototype.startsWith) {
     $(document).ready(function() {
         renderView();
         adjustViewTopPadding();
+        for (var i=1; i<6; i++) window.setTimeout(adjustViewTopPadding, i * 1000);
         $(".faq .panel").click(faqClickHandler);
     });
 
