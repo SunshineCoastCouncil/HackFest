@@ -49,6 +49,11 @@ body {
     min-height: 200px;
 }
 
+.safari .feature {
+    background-attachment: local;
+    background-size: 100%;
+}
+
 .feature .jumbotron {
     color: white;
     text-align: center;

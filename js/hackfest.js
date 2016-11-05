@@ -12,6 +12,13 @@ if (!String.prototype.startsWith) {
         return encodeURI("page/" + pageName + ".html");
     }
 
+    function safariHacks() {
+        var userAgent = window.navigator.userAgent;
+        if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+            $("body").addClass("safari");
+        }
+    }
+
     function adjustViewTopPadding() {
         var topNavHeight = $("nav.navbar-fixed-top").height();
         $("div.view").css("padding-top", topNavHeight + "px");
@@ -62,6 +69,7 @@ if (!String.prototype.startsWith) {
     }
 
     $(document).ready(function() {
+        safariHacks();
         renderView();
         adjustViewTopPadding();
         syncFAQHeights();
