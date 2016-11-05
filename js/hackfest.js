@@ -17,6 +17,16 @@ if (!String.prototype.startsWith) {
         $("div.view").css("padding-top", topNavHeight + "px");
     }
 
+    function syncFAQHeights() {
+        var $headings = $("#faq").find(".panel-heading");
+        $headings.css("height", "");
+        var headingHeight = 0;
+        $headings.each(function() {
+            headingHeight = Math.max(headingHeight, $(this).outerHeight());
+        });
+        $headings.css("height", headingHeight);
+    }
+
     function renderView() {
         $("div.view").hide();
         $("#mainNav ul.nav li.active").removeClass("active");
@@ -42,6 +52,7 @@ if (!String.prototype.startsWith) {
 
     window.onhashchange = renderView;
     $(window).resize(adjustViewTopPadding);
+    $(window).resize(syncFAQHeights);
 
     function faqClickHandler() {
         $(this).toggleClass("selected");
@@ -50,6 +61,7 @@ if (!String.prototype.startsWith) {
     $(document).ready(function() {
         renderView();
         adjustViewTopPadding();
+        syncFAQHeights();
         for (var i=1; i<6; i++) window.setTimeout(adjustViewTopPadding, i * 1000);
         $("#faq .panel").click(faqClickHandler);
     });
