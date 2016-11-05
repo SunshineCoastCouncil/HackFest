@@ -19,9 +19,9 @@ if (!String.prototype.startsWith) {
         }
     }
 
-    function adjustViewTopPadding() {
+    function adjustViewTopMargin() {
         var topNavHeight = $("nav.navbar-fixed-top").height();
-        $("div.view").css("padding-top", topNavHeight + "px");
+        $("div.view").css("margin-top", topNavHeight + "px");
     }
 
     function syncFAQHeights() {
@@ -61,7 +61,7 @@ if (!String.prototype.startsWith) {
     }
 
     window.onhashchange = renderView;
-    $(window).resize(adjustViewTopPadding);
+    $(window).resize(adjustViewTopMargin);
     $(window).resize(syncFAQHeights);
 
     function faqClickHandler() {
@@ -71,9 +71,9 @@ if (!String.prototype.startsWith) {
     $(document).ready(function() {
         safariHacks();
         renderView();
-        adjustViewTopPadding();
+        adjustViewTopMargin();
         syncFAQHeights();
-        for (var i=1; i<6; i++) window.setTimeout(adjustViewTopPadding, i * 1000);
+        for (var i=1; i<6; i++) window.setTimeout(adjustViewTopMargin, i * 1000);
         $("#faq .panel").click(faqClickHandler);
     });
 
