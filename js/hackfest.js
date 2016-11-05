@@ -47,7 +47,9 @@ if (!String.prototype.startsWith) {
         } else {
             $("#homeView").show();
             syncFAQHeights();
-            $(window.location.hash || "#homeView").get(0).scrollIntoView();
+            var $section = $(window.location.hash || "#homeView");
+            if ($section.length == 0) $section = $("#homeView");
+            $section[0].scrollIntoView();
         }
     }
 
