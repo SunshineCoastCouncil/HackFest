@@ -46,6 +46,7 @@ if (!String.prototype.startsWith) {
             $pageView.load(pageUrl(pageName) + " #pageContent");
         } else {
             $("#homeView").show();
+            syncFAQHeights();
             $(window.location.hash || "#homeView").get(0).scrollIntoView();
         }
     }
