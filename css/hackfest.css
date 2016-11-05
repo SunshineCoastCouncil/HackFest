@@ -10,6 +10,11 @@
     background-color: #4d2178;
 }
 
+.long-link {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 html * {
     font-family: 'Montserrat', sans-serif;
 }
