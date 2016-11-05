@@ -51,7 +51,7 @@ if (!String.prototype.startsWith) {
         renderView();
         adjustViewTopPadding();
         for (var i=1; i<6; i++) window.setTimeout(adjustViewTopPadding, i * 1000);
-        $(".faq .panel").click(faqClickHandler);
+        $("#faq .panel").click(faqClickHandler);
     });
 
     // hide expanded menu after click on small screens

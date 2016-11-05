@@ -113,14 +113,14 @@ table.schedule tr td:nth-child(3) {
     font-size: 12px;
 }
 
-div.faq div.panel {
+#faq .panel {
     cursor: pointer;
 }
 
-div.faq div.panel-body {
+#faq .panel-body {
     display: none;
 }
 
-div.faq div.panel.selected div.panel-body {
+#faq .panel.selected .panel-body {
     display: block;
 }
