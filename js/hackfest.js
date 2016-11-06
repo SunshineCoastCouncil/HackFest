@@ -51,6 +51,7 @@ if (!String.prototype.startsWith) {
             $pageView.children().remove();
             $pageView.show();
             $pageView.load(pageUrl(pageName) + " #pageContent");
+            $("html, body").animate({ scrollTop: 0 }, "fast");
         } else {
             $("#homeView").show();
             syncFAQHeights();
