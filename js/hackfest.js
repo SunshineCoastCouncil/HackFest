@@ -55,9 +55,12 @@ if (!String.prototype.startsWith) {
         } else {
             $("#homeView").show();
             syncFAQHeights();
-            var $section = $(window.location.hash || "#homeView");
-            if ($section.length == 0) $section = $("#homeView");
-            $section[0].scrollIntoView();
+            if (window.location.hash) {
+                var $section = $(window.location.hash);
+                $section[0].scrollIntoView();
+            } else {
+                $("html, body").animate({ scrollTop: 0 }, "fast");
+            }
         }
     }
 
