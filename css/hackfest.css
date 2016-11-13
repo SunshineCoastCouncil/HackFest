@@ -43,7 +43,7 @@ body {
 .feature {
     position: relative;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 200px;
