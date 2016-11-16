@@ -50,7 +50,17 @@ if (!String.prototype.startsWith) {
             var pageName = view.substring(view.indexOf("-") + 1);
             $pageView.children().remove();
             $pageView.show();
-            $pageView.load(pageUrl(pageName) + " #pageContent");
+            $pageView.load(pageUrl(pageName) + " #pageContent", function() {
+                $("button.google-search").click(function() {
+                    var $button = $(this);
+                    var $input = $button.siblings("input.google-search");
+                    var $link = $button.siblings("a.google-search");
+                    var searchLink = $link.prop("host") + $link.prop("pathname");
+                    var searchTerm = '"' + searchLink + '" ' + $input.val();
+                    $input.val("");
+                    window.open("https://www.google.com/search?q=" + encodeURIComponent(searchTerm), "_blank").focus();
+                });
+            });
             $("html, body").animate({ scrollTop: 0 }, "fast");
         } else {
             $("#homeView").show();
