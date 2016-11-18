@@ -51,6 +51,7 @@ body {
 
 .safari .feature {
     background-attachment: local;
+    background-position: center;
     background-size: 100%;
 }
 
