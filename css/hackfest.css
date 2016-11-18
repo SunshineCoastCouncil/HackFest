@@ -114,7 +114,7 @@ table.schedule tr td:nth-child(3) {
     text-align: left;
 }
 
-table.schedule tr.last td {
+table.schedule tr.end-of-section td {
     padding-bottom: 25px;
 }
 
