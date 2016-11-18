@@ -114,6 +114,10 @@ table.schedule tr td:nth-child(3) {
     text-align: left;
 }
 
+table.schedule tr.last td {
+    padding-bottom: 25px;
+}
+
 .jumbotron.footer {
     color: rgb(230, 230, 230);
     background-color: rgb(51, 51, 51);
