@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HackFest - Sunshine Coast Council</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/hackfest.css">
+
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/mustache.js"></script>
+    <script src="js/hackfest.js"></script>
+
+    <script src="html5gallery/jquery.js"></script>
+
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function() {
+
+            urlList =[];
+
+            $.ajax({
+                url: "https://scchackfest2016.blob.core.windows.net/eventphotographs?restype=container&comp=list",
+                dataType: "xml",
+                success: function (xml) {
+                    $(xml).find("Blobs blob Name").each(function (index, name) {
+
+                        if ($(name).text().substr(0, 5) != 'thumb') {
+
+                            urlList.push('<a href="https://scchackfest2016.blob.core.windows.net/eventphotographs/' + $(name).text() + '"><img src="https://scchackfest2016.blob.core.windows.net/eventphotographs/thumb_' + $(name).text() + '" /></a>');
+                        }
+                    });
+
+                    $(".html5gallery").append(urlList.join(""));
+
+                  //  console.log(urlList.join(""));
+
+
+                        var element = document.createElement("script");
+                        element.src = "html5gallery/html5gallery.js";
+                        document.body.appendChild(element);
+                }
+
+            });
+
+       });
+
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#"><span class="navbar-brand">HackFest<span class="hidden-xs hidden-sm hidden-md"> Participant Info</span></span></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a target="_blank" href="https://www.sunshinecoast.qld.gov.au/Experience-Sunshine-Coast/Events/HackFest">Main Site</a></li>
+                <li><a href="index.html#">Home</a></li>
+                <li><a href="index.html#eventSchedule">Event Schedule</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#page-Open Data">Open Data</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">On the Day <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#page-The Venue">The Venue</a></li>
+                        <li><a href="index.html#page-Messaging Each Other During The Event">Messaging Each Other During The Event</a></li>
+                        <li><a href="index.html#page-Team Project Storage">Team Project Storage</a></li>
+                        <li><a href="index.html#page-Code Examples, Tutorials and Tools">Code Examples, Tutorials and Tools</a></li>
+                        <li><a href="index.html#page-Where Can I Host My App">Where Can I Host My App</a></li>
+                        <li><a href="index.html#page-Participants Guide">Participants Guide</a></li>
+                        <li><a href="Photo Gallery.html">Photo Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="#page-IdeasFest">IdeasFest</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="pageView" class="view container-fluid"></div>
+<div id="homeView" class="view container-fluid text-center">
+
+    <div class="content">
+
+        <h3>Photographs from the Event</h3>
+
+
+        <div style="display:none;" class="html5gallery" data-skin="horizontal" data-width="480" data-height="272" data-responsive="true" >
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
