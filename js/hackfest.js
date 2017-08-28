@@ -47,7 +47,7 @@ if (!String.prototype.startsWith) {
         var view = window.location.hash.substring(1);
         if (view.startsWith("page-")) {
             var $pageView = $("#pageView");
-            var pageName = view.substring(view.indexOf("-") + 1);
+            var pageName = decodeURIComponent(view.substring(view.indexOf("-") + 1));
             $pageView.children().remove();
             $pageView.show();
             $pageView.load(pageUrl(pageName) + " #pageContent", function() {
