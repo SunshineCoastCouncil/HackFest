@@ -37,7 +37,7 @@ if (!String.prototype.startsWith) {
     function renderView() {
         $("div.view").hide();
         $("#mainNav ul.nav li.active").removeClass("active");
-        $("#mainNav ul.nav li").each(function() {
+        $("#mainNav ul.nav li").not(".dropdown").each(function() {
             var $this = $(this);
             if ($this.find("a").attr("href") == (window.location.hash || "#")) {
                 $this.addClass("active");
