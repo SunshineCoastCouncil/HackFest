@@ -268,5 +268,25 @@
     <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"></a> Excluding photos &amp; images, website content is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
   </div>
 </div>
+<script>
+    if (window.location.hostname === 'localhost') {
+        window.environmentIndicatorOptions = {
+            content: 'Local Dev Environment',
+            opacity: '0.9'
+        };
+    } else if (window.location.hostname === 'sunshinecoastcouncil.github.io') {
+        window.environmentIndicatorOptions = {
+            content: 'Testing Environment',
+            'background-color': 'deeppink',
+            opacity: '0.9'
+        };
+    } else {
+        window.environmentIndicatorOptions = {
+            display: 'none',
+            content: ''
+        };
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/gh/patros/environment-indicator@1.2.0/environment-indicator.js"></script>
 </body>
 </html>
